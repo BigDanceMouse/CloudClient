@@ -74,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				273A72911E708C7100024FEF /* CloudClient */,
+				27CAC2CB1E744807006F5719 /* Resources */,
 				273A729C1E708C7100024FEF /* CloudClientTests */,
 				273A72901E708C7100024FEF /* Products */,
 				273A72A91E70971D00024FEF /* Frameworks */,
@@ -93,8 +94,6 @@
 			isa = PBXGroup;
 			children = (
 				27CAC2541E741CCC006F5719 /* Sources */,
-				273A72921E708C7100024FEF /* CloudClient.h */,
-				273A72931E708C7100024FEF /* Info.plist */,
 			);
 			path = CloudClient;
 			sourceTree = "<group>";
@@ -121,7 +120,6 @@
 			isa = PBXGroup;
 			children = (
 				27CAC28F1E7438ED006F5719 /* Services */,
-				27CAC2571E741CCC006F5719 /* Defaults.swift */,
 				27CAC2591E741CCC006F5719 /* Entitys */,
 			);
 			path = Sources;
@@ -140,19 +138,22 @@
 		27CAC28F1E7438ED006F5719 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				27CAC2571E741CCC006F5719 /* Defaults.swift */,
 				27CAC2551E741CCC006F5719 /* AuthService.swift */,
 				27CAC25C1E741CCC006F5719 /* FolderService.swift */,
-				27CAC2901E7438F9006F5719 /* Cloud */,
+				27CAC2561E741CCC006F5719 /* CloudService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
 		};
-		27CAC2901E7438F9006F5719 /* Cloud */ = {
+		27CAC2CB1E744807006F5719 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				27CAC2561E741CCC006F5719 /* CloudService.swift */,
+				273A72921E708C7100024FEF /* CloudClient.h */,
+				273A72931E708C7100024FEF /* Info.plist */,
 			);
-			name = Cloud;
+			name = Resources;
+			path = CloudClient;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

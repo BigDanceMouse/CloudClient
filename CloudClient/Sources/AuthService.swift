@@ -22,7 +22,7 @@ public struct AuthService {
     static func auth(login: String, pass: String) {
         
         if !restoreToken() {
-            getCookiesAndToken(login: login, pass: password)
+            getCookiesAndToken(login: login, pass: pass)
         }
     }
     
@@ -32,7 +32,7 @@ public struct AuthService {
         
         let params = [
               "Login"   : login
-            , "Password": password
+            , "Password": pass
         ]
         
         _ = CloudService.getAuth(method: "/cgi-bin/auth", params: params)
