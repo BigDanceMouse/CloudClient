@@ -11,7 +11,7 @@ import Foundation
 fileprivate let homeFolder: String = "/"
 
 
-public struct FolderService {
+struct FolderService {
     
     
     static func getRootFolder() -> Either<HomeFolder> {

@@ -11,7 +11,7 @@ import Foundation
 
 private let tokenKey = "userTokenIdentifier"
 
-public struct AuthService {
+struct AuthService {
     
     static var token: String!
     

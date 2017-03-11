@@ -10,11 +10,11 @@ import Foundation
 
 public class Node {
     
-    var name: String
-    var size: Int
-    var home: String
+    public var name: String
+    public var size: Int
+    public var home: String
     
-    var type: String {
+    public var type: String {
         return "node"
     }
     
@@ -48,9 +48,9 @@ public class Node {
 
 public class Folder: Node {
     
-    let count: (folders:Int, files:Int)
+    public let countSubfolders: (folders:Int, files:Int)
     
-    override var type: String {
+    override public var type: String {
         return "folder"
     }
     
@@ -62,7 +62,7 @@ public class Folder: Node {
             let files = counts["files"] as? Int
         else { return nil }
         
-        self.count = (folders, files)
+        self.countSubfolders = (folders, files)
         
         super.init(json: json)
     }
@@ -72,7 +72,7 @@ public class HomeFolder: Folder {
     
     private(set) var list:[Node] = []
     
-    override var type: String {
+    override public  var type: String {
         return "root_folder"
     }
     
@@ -87,7 +87,7 @@ public class HomeFolder: Folder {
 }
 
 public class File: Node {
-    override var type: String {
+    override public var type: String {
         return "file"
     }
 }
