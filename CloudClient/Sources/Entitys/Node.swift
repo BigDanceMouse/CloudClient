@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Node {
+public class Node {
     
     var name: String
     var size: Int
@@ -46,7 +46,7 @@ class Node {
 }
 
 
-class Folder: Node {
+public class Folder: Node {
     
     let count: (folders:Int, files:Int)
     
@@ -68,7 +68,7 @@ class Folder: Node {
     }
 }
 
-class HomeFolder: Folder {
+public class HomeFolder: Folder {
     
     private(set) var list:[Node] = []
     
@@ -86,7 +86,7 @@ class HomeFolder: Folder {
     }
 }
 
-class File: Node {
+public class File: Node {
     override var type: String {
         return "file"
     }

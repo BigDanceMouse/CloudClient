@@ -43,9 +43,9 @@
 		27CAC2551E741CCC006F5719 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		27CAC2561E741CCC006F5719 /* CloudService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudService.swift; sourceTree = "<group>"; };
 		27CAC2571E741CCC006F5719 /* Defaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
-		27CAC2581E741CCC006F5719 /* Either.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Either.swift; sourceTree = "<group>"; };
+		27CAC2581E741CCC006F5719 /* Either.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Either.swift; path = ../Either.swift; sourceTree = "<group>"; };
 		27CAC25A1E741CCC006F5719 /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
-		27CAC25B1E741CCC006F5719 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		27CAC25B1E741CCC006F5719 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Error.swift; path = ../Error.swift; sourceTree = "<group>"; };
 		27CAC25C1E741CCC006F5719 /* FolderService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FolderService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,13 +120,9 @@
 		27CAC2541E741CCC006F5719 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				27CAC2551E741CCC006F5719 /* AuthService.swift */,
-				27CAC2561E741CCC006F5719 /* CloudService.swift */,
+				27CAC28F1E7438ED006F5719 /* Services */,
 				27CAC2571E741CCC006F5719 /* Defaults.swift */,
-				27CAC2581E741CCC006F5719 /* Either.swift */,
 				27CAC2591E741CCC006F5719 /* Entitys */,
-				27CAC25B1E741CCC006F5719 /* Error.swift */,
-				27CAC25C1E741CCC006F5719 /* FolderService.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -134,9 +130,29 @@
 		27CAC2591E741CCC006F5719 /* Entitys */ = {
 			isa = PBXGroup;
 			children = (
+				27CAC25B1E741CCC006F5719 /* Error.swift */,
+				27CAC2581E741CCC006F5719 /* Either.swift */,
 				27CAC25A1E741CCC006F5719 /* Node.swift */,
 			);
 			path = Entitys;
+			sourceTree = "<group>";
+		};
+		27CAC28F1E7438ED006F5719 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				27CAC2551E741CCC006F5719 /* AuthService.swift */,
+				27CAC25C1E741CCC006F5719 /* FolderService.swift */,
+				27CAC2901E7438F9006F5719 /* Cloud */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		27CAC2901E7438F9006F5719 /* Cloud */ = {
+			isa = PBXGroup;
+			children = (
+				27CAC2561E741CCC006F5719 /* CloudService.swift */,
+			);
+			name = Cloud;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
