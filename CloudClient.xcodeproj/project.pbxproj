@@ -12,14 +12,15 @@
 		273A72A01E708C7100024FEF /* CloudClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 273A72921E708C7100024FEF /* CloudClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		273A72AB1E70971D00024FEF /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 273A72AA1E70971D00024FEF /* Alamofire.framework */; };
 		273A72AD1E70975900024FEF /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 273A72AC1E70975900024FEF /* Alamofire.framework */; };
-		27CAC25E1E741CCC006F5719 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CAC2551E741CCC006F5719 /* AuthService.swift */; };
+		275951ED1E756A9D0003A246 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275951E91E756A9D0003A246 /* AuthService.swift */; };
+		275951EE1E756A9D0003A246 /* CloudClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275951EA1E756A9D0003A246 /* CloudClient.swift */; };
+		275951EF1E756A9D0003A246 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275951EB1E756A9D0003A246 /* Defaults.swift */; };
+		275951F01E756A9D0003A246 /* FolderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275951EC1E756A9D0003A246 /* FolderService.swift */; };
+		275951F21E756AC50003A246 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275951F11E756AC50003A246 /* Error.swift */; };
+		275951F41E756AD10003A246 /* Either.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275951F31E756AD10003A246 /* Either.swift */; };
+		275951F61E756E7B0003A246 /* FileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275951F51E756E7B0003A246 /* FileService.swift */; };
 		27CAC25F1E741CCC006F5719 /* CloudService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CAC2561E741CCC006F5719 /* CloudService.swift */; };
-		27CAC2601E741CCC006F5719 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CAC2571E741CCC006F5719 /* Defaults.swift */; };
-		27CAC2611E741CCC006F5719 /* Either.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CAC2581E741CCC006F5719 /* Either.swift */; };
 		27CAC2621E741CCC006F5719 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CAC25A1E741CCC006F5719 /* Node.swift */; };
-		27CAC2631E741CCC006F5719 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CAC25B1E741CCC006F5719 /* Error.swift */; };
-		27CAC2641E741CCC006F5719 /* FolderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CAC25C1E741CCC006F5719 /* FolderService.swift */; };
-		27CAC2FB1E744DE5006F5719 /* CloudClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CAC2FA1E744DE5006F5719 /* CloudClient.swift */; };
 		27CAC2FF1E752AE9006F5719 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CAC2FE1E752AE9006F5719 /* Operators.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,14 +43,15 @@
 		273A729F1E708C7100024FEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		273A72AA1E70971D00024FEF /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Checkouts/Alamofire/build/Debug/Alamofire.framework; sourceTree = "<group>"; };
 		273A72AC1E70975900024FEF /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Checkouts/Alamofire/build/Debug/Alamofire.framework; sourceTree = "<group>"; };
-		27CAC2551E741CCC006F5719 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		275951E91E756A9D0003A246 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthService.swift; path = Services/AuthService.swift; sourceTree = "<group>"; };
+		275951EA1E756A9D0003A246 /* CloudClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CloudClient.swift; path = Services/CloudClient.swift; sourceTree = "<group>"; };
+		275951EB1E756A9D0003A246 /* Defaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Defaults.swift; path = Services/Defaults.swift; sourceTree = "<group>"; };
+		275951EC1E756A9D0003A246 /* FolderService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FolderService.swift; path = Services/FolderService.swift; sourceTree = "<group>"; };
+		275951F11E756AC50003A246 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		275951F31E756AD10003A246 /* Either.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Either.swift; sourceTree = "<group>"; };
+		275951F51E756E7B0003A246 /* FileService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FileService.swift; path = Services/FileService.swift; sourceTree = "<group>"; };
 		27CAC2561E741CCC006F5719 /* CloudService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudService.swift; sourceTree = "<group>"; };
-		27CAC2571E741CCC006F5719 /* Defaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
-		27CAC2581E741CCC006F5719 /* Either.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Either.swift; path = ../Either.swift; sourceTree = "<group>"; };
 		27CAC25A1E741CCC006F5719 /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
-		27CAC25B1E741CCC006F5719 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Error.swift; path = ../Error.swift; sourceTree = "<group>"; };
-		27CAC25C1E741CCC006F5719 /* FolderService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FolderService.swift; sourceTree = "<group>"; };
-		27CAC2FA1E744DE5006F5719 /* CloudClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudClient.swift; sourceTree = "<group>"; };
 		27CAC2FE1E752AE9006F5719 /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -123,10 +125,10 @@
 		27CAC2541E741CCC006F5719 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				27CAC2FA1E744DE5006F5719 /* CloudClient.swift */,
-				27CAC28F1E7438ED006F5719 /* Services */,
-				27CAC2591E741CCC006F5719 /* Entitys */,
+				275951EA1E756A9D0003A246 /* CloudClient.swift */,
 				27CAC2FE1E752AE9006F5719 /* Operators.swift */,
+				27CAC2591E741CCC006F5719 /* Entitys */,
+				27CAC28F1E7438ED006F5719 /* Services */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -134,8 +136,8 @@
 		27CAC2591E741CCC006F5719 /* Entitys */ = {
 			isa = PBXGroup;
 			children = (
-				27CAC25B1E741CCC006F5719 /* Error.swift */,
-				27CAC2581E741CCC006F5719 /* Either.swift */,
+				275951F31E756AD10003A246 /* Either.swift */,
+				275951F11E756AC50003A246 /* Error.swift */,
 				27CAC25A1E741CCC006F5719 /* Node.swift */,
 			);
 			path = Entitys;
@@ -144,10 +146,11 @@
 		27CAC28F1E7438ED006F5719 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				27CAC2571E741CCC006F5719 /* Defaults.swift */,
-				27CAC2551E741CCC006F5719 /* AuthService.swift */,
-				27CAC25C1E741CCC006F5719 /* FolderService.swift */,
+				275951E91E756A9D0003A246 /* AuthService.swift */,
 				27CAC2561E741CCC006F5719 /* CloudService.swift */,
+				275951EB1E756A9D0003A246 /* Defaults.swift */,
+				275951F51E756E7B0003A246 /* FileService.swift */,
+				275951EC1E756A9D0003A246 /* FolderService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -274,14 +277,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27CAC2641E741CCC006F5719 /* FolderService.swift in Sources */,
-				27CAC2611E741CCC006F5719 /* Either.swift in Sources */,
-				27CAC2FB1E744DE5006F5719 /* CloudClient.swift in Sources */,
+				275951F01E756A9D0003A246 /* FolderService.swift in Sources */,
 				27CAC2621E741CCC006F5719 /* Node.swift in Sources */,
-				27CAC2601E741CCC006F5719 /* Defaults.swift in Sources */,
-				27CAC25E1E741CCC006F5719 /* AuthService.swift in Sources */,
-				27CAC2631E741CCC006F5719 /* Error.swift in Sources */,
+				275951EE1E756A9D0003A246 /* CloudClient.swift in Sources */,
+				275951F61E756E7B0003A246 /* FileService.swift in Sources */,
+				275951F41E756AD10003A246 /* Either.swift in Sources */,
+				275951ED1E756A9D0003A246 /* AuthService.swift in Sources */,
+				275951EF1E756A9D0003A246 /* Defaults.swift in Sources */,
 				27CAC25F1E741CCC006F5719 /* CloudService.swift in Sources */,
+				275951F21E756AC50003A246 /* Error.swift in Sources */,
 				27CAC2FF1E752AE9006F5719 /* Operators.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

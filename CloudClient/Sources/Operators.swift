@@ -46,14 +46,4 @@ public func +?<T>(val:Either<T>, f:(T) -> ()) {
     }
 }
 
-////@_transparent
-//@discardableResult
-//public func >>=<T,U>( val:@autoclosure () -> Either<T>, f:(T) -> Either<U>) -> Either<U> {
-//    
-//    switch val(){
-//    case .success(let x): return f(x)
-//    case .fail(let err): return Either<U>.fail(err)
-//    }
-//}
-
 

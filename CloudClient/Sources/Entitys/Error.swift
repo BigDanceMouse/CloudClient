@@ -12,4 +12,5 @@ public enum CCError: Error {
     case notAuthorized
     case failParce
     case getFolderError
+    case fileManagerError
 }

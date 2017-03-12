@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 infix operator >>=
     : MonadicPrecedence
 
@@ -21,11 +22,13 @@ struct AuthService {
         return self.token == nil
     }
     
-    static func auth(login: String, pass: String) throws {
+    static func auth(login: String, pass: String) -> Bool {
         
-//        if !restoreToken() {
+        if !restoreToken() {
             getCookiesAndToken(login: login, pass: pass)
-//        }
+        }
+        
+        return !notAutoriszed()
     }
     
     private static func getCookiesAndToken(login: String, pass: String) {

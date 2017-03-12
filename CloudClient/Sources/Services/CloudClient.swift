@@ -8,8 +8,12 @@
 
 import Foundation
 
-public func authorize(login:String, password: String) throws {
-    try AuthService.auth(login: login, pass: password)
+public var authorized: Bool {
+    return !AuthService.notAutoriszed()
+}
+
+public func authorize(login:String, password: String) -> Bool {
+    return AuthService.auth(login: login, pass: password)
 }
 
 public func getRootFolder() -> HomeFolder? {
@@ -19,5 +23,9 @@ public func getRootFolder() -> HomeFolder? {
     }
     
     return FolderService.getRootFolder().value
+}
+
+public func getFile(_ file:File) -> URL? {
+    return FileService.get(file: file).value
 }
 

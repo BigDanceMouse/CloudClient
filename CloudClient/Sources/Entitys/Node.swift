@@ -25,6 +25,8 @@ public class Node {
         else { return nil }
         
         switch nodeType {
+        case "folder" where ((json["list"] as? [JSON])?.count ?? 0) > 0:
+                        return HomeFolder(json: json)
         case "folder":  return Folder(json: json)
         case "file":    return File(json: json)
         default:        return Node(json: json)
@@ -70,7 +72,7 @@ public class Folder: Node {
 
 public class HomeFolder: Folder {
     
-    private(set) var list:[Node] = []
+    public private(set) var list:[Node] = []
     
     override public  var type: String {
         return "root_folder"
@@ -87,7 +89,20 @@ public class HomeFolder: Folder {
 }
 
 public class File: Node {
+    
+    public private(set) var hash: String
+    
     override public var type: String {
         return "file"
+    }
+    
+    override init?(json: JSON) {
+        
+        guard
+            let _hash = json["hash"] as? String
+            else { return nil }
+        
+        self.hash = _hash
+        super.init(json: json)
     }
 }

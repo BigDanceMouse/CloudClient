@@ -59,15 +59,21 @@ struct CloudService {
     
     static func load(from: String, to:URL, params: JSON) {
         
-        let destination: DownloadRequest.DownloadFileDestination = { _, _ in
+        let semaphore = DispatchSemaphore.init(value: 0)
+        
+        let destination: DownloadRequest.DownloadFileDestination = { tempURL, _ in
             (to, DownloadRequest.DownloadOptions.removePreviousFile)
         }
         
         Alamofire
-            .download(from, to: destination)
+            .download(getFileURL + from, to: destination)
             .response(queue: queue) { response in
                 print(response)
+                
+                semaphore.signal()
             }
+        
+        _ = semaphore.wait(timeout: .distantFuture)
     }
     
 }

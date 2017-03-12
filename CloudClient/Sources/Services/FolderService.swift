@@ -13,7 +13,6 @@ fileprivate let homeFolder: String = "/"
 
 struct FolderService {
     
-    
     static func getRootFolder() -> Either<HomeFolder> {
         
         let params = [ "token": AuthService.token!,
@@ -41,9 +40,5 @@ struct FolderService {
             else { return .fail(CCError.getFolderError) }
         
         return .success(folder)
-    }
-    
-    private static func load(file:File, `in` destURL: URL) {
-        
     }
 }

@@ -12,5 +12,5 @@ Pod::Spec.new do |spec|
   spec.source_files = "CloudClient/**/*.{h,swift}"
 
   spec.dependency "Alamofire", "~> 4.4.0"
-  spec.dependency "SantasLittleHelpers", :path => '/Users/VladimirElizarov/dev/Pods/SantasLittleHelpers'
+
 end
