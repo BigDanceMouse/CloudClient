@@ -8,11 +8,16 @@
 
 import Foundation
 
+public func prepare() {
+    AuthService.restoreToken()
+}
+
 public var authorized: Bool {
     return !AuthService.notAutoriszed()
 }
 
 public func authorize(login:String, password: String) -> Bool {
+    AuthService.logout()
     return AuthService.auth(login: login, pass: password)
 }
 
@@ -23,6 +28,10 @@ public func getRootFolder() -> HomeFolder? {
     }
     
     return FolderService.getRootFolder().value
+}
+
+public func getSubfolders(from folder: Folder) -> HomeFolder? {
+    return FolderService.getFolder(home: folder).value
 }
 
 public func getFile(_ file:File) -> URL? {

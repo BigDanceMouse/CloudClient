@@ -20,7 +20,8 @@ struct AuthService {
     
     static func notAutoriszed() -> Bool {
         return self.token == nil
-    }
+        }
+
     
     static func auth(login: String, pass: String) -> Bool {
         
@@ -29,7 +30,7 @@ struct AuthService {
         }
         
         return !notAutoriszed()
-    }
+        }
     
     private static func getCookiesAndToken(login: String, pass: String) {
         
@@ -46,8 +47,7 @@ struct AuthService {
         CloudService.get(method: "/tokens/csrf")
             >>= AuthService.extractToken
             +? storeToken
-    }
-    
+        }
     
     private static func extractToken(response r:JSON) -> Either<String> {
         
@@ -59,15 +59,14 @@ struct AuthService {
         }
         
         return .success(token)
-    }
-    
+        }
     
     private static func storeToken(_ token:String) {
         self.token = token
         UserDefaults.standard.set(token, forKey: tokenKey)
-    }
+        }
     
-    private static func restoreToken() -> Bool {
+    static func restoreToken() -> Bool {
         if let _token = UserDefaults.standard.value(forKey: tokenKey) as? String {
             print("token successfuly restored")
             self.token = _token
@@ -75,8 +74,33 @@ struct AuthService {
         }
         else {
             return false
+        }}
+    
+    
+    
+    static func logout() {
+        clearToken()
+        clearCookies()
         }
-    }
+    
+    private static func clearToken() {
+        self.token = nil
+        UserDefaults.standard.set(nil, forKey: tokenKey)
+        }
+    
+    private static func clearCookies() {
+        removeStoredCookie(for:URL(string: authURL)!)
+        removeStoredCookie(for: URL(string: apiURL)!)
+        }
+    
+    private static func removeStoredCookie(for url: URL) {
+        
+        let cstorage = HTTPCookieStorage.shared
+        cstorage
+            .cookies(for: url)?
+            .forEach { cstorage.deleteCookie($0) }
+        }
+    
     
 }
 
