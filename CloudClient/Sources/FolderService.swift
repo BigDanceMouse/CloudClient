@@ -38,7 +38,7 @@ struct FolderService {
               let value = CloudService.get(method: "/folder", params:params).value
             , let body = value["body"] as? JSON
             , let folder = HomeFolder(json: body)
-            else { return .fail(RequestError.getFolderError) }
+            else { return .fail(CCError.getFolderError) }
         
         return .success(folder)
     }

@@ -8,6 +8,8 @@
 
 import Foundation
 
+infix operator >>=
+    : MonadicPrecedence
 
 private let tokenKey = "userTokenIdentifier"
 
@@ -19,11 +21,11 @@ struct AuthService {
         return self.token == nil
     }
     
-    static func auth(login: String, pass: String) {
+    static func auth(login: String, pass: String) throws {
         
-        if !restoreToken() {
+//        if !restoreToken() {
             getCookiesAndToken(login: login, pass: pass)
-        }
+//        }
     }
     
     private static func getCookiesAndToken(login: String, pass: String) {
@@ -37,25 +39,28 @@ struct AuthService {
         
         _ = CloudService.getAuth(method: "/cgi-bin/auth", params: params)
         _ = CloudService.getAuth(method: "/sdc?from=https://cloud.mail.ru/home")
-        let result = CloudService.get(method: "/tokens/csrf")
-        extractToken(response: result)
+        
+        CloudService.get(method: "/tokens/csrf")
+            >>= AuthService.extractToken
+            +? storeToken
     }
     
     
-    private static func extractToken(response:Either<JSON>) {
+    private static func extractToken(response r:JSON) -> Either<String> {
         
         guard
-            let r = response.value,
             let body = r["body"] as? JSON,
             let token = body["token"] as? String
-        else { preconditionFailure("no tokent") }
+        else {
+            return .fail(CCError.notAuthorized)
+        }
         
-        self.token = token
-        storeToken(token)
+        return .success(token)
     }
     
     
     private static func storeToken(_ token:String) {
+        self.token = token
         UserDefaults.standard.set(token, forKey: tokenKey)
     }
     

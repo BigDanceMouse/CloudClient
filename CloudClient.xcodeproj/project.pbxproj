@@ -20,6 +20,7 @@
 		27CAC2631E741CCC006F5719 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CAC25B1E741CCC006F5719 /* Error.swift */; };
 		27CAC2641E741CCC006F5719 /* FolderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CAC25C1E741CCC006F5719 /* FolderService.swift */; };
 		27CAC2FB1E744DE5006F5719 /* CloudClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CAC2FA1E744DE5006F5719 /* CloudClient.swift */; };
+		27CAC2FF1E752AE9006F5719 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CAC2FE1E752AE9006F5719 /* Operators.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		27CAC25B1E741CCC006F5719 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Error.swift; path = ../Error.swift; sourceTree = "<group>"; };
 		27CAC25C1E741CCC006F5719 /* FolderService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FolderService.swift; sourceTree = "<group>"; };
 		27CAC2FA1E744DE5006F5719 /* CloudClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudClient.swift; sourceTree = "<group>"; };
+		27CAC2FE1E752AE9006F5719 /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +126,7 @@
 				27CAC2FA1E744DE5006F5719 /* CloudClient.swift */,
 				27CAC28F1E7438ED006F5719 /* Services */,
 				27CAC2591E741CCC006F5719 /* Entitys */,
+				27CAC2FE1E752AE9006F5719 /* Operators.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 				27CAC25E1E741CCC006F5719 /* AuthService.swift in Sources */,
 				27CAC2631E741CCC006F5719 /* Error.swift in Sources */,
 				27CAC25F1E741CCC006F5719 /* CloudService.swift in Sources */,
+				27CAC2FF1E752AE9006F5719 /* Operators.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

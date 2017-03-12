@@ -45,7 +45,7 @@ struct CloudService {
                     result = .success(json)
                 }
                 else {
-                    result = .fail(RequestError.failParce)
+                    result = .fail(CCError.failParce)
                 }
                 
                 semaphore.signal()

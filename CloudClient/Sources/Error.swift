@@ -8,7 +8,8 @@
 
 import Foundation
 
-public enum RequestError: Error {
+public enum CCError: Error {
+    case notAuthorized
     case failParce
     case getFolderError
 }
