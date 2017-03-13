@@ -41,4 +41,12 @@ struct FolderService {
         
         return .success(folder)
     }
+    
+    static func addFolder(to parentFolder: Folder, name: String) -> Bool {
+        
+        let params = ["token": AuthService.token!,
+                      "home" : parentFolder.home + "/\(name)" ]
+        
+        return CloudService.post(method: "/folder/add", params: params)
+    }
 }

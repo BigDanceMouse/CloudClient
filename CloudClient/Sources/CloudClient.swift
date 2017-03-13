@@ -9,7 +9,12 @@
 import Foundation
 
 public func prepare() {
-    AuthService.restoreToken()
+    _ = AuthService.restoreToken()
+}
+
+
+public func logout() {
+    AuthService.logout()
 }
 
 public var authorized: Bool {
@@ -17,9 +22,10 @@ public var authorized: Bool {
 }
 
 public func authorize(login:String, password: String) -> Bool {
-    AuthService.logout()
+    logout()
     return AuthService.auth(login: login, pass: password)
 }
+
 
 public func getRootFolder() -> HomeFolder? {
     
@@ -38,3 +44,6 @@ public func getFile(_ file:File) -> URL? {
     return FileService.get(file: file).value
 }
 
+public func addFolder(to parentFolder: Folder, name: String) -> Bool {
+    return FolderService.addFolder(to: parentFolder, name: name)
+}

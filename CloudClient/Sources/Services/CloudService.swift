@@ -57,6 +57,29 @@ struct CloudService {
     }
     
     
+    static func post(method: String, params: JSON) -> Bool {
+        
+        let semaphore = DispatchSemaphore.init(value: 0)
+        var result: Bool = false
+        
+        Alamofire
+            .request(apiURL + method, method: .get, parameters: params)
+            .response(queue: queue) { r in
+                
+                if let status = r.response?.statusCode,
+                    200..<300 ~= status {
+                    result = true
+                }
+                
+                semaphore.signal()
+        }
+        
+        _ = semaphore.wait(timeout: .distantFuture)
+        
+        return result
+    }
+    
+    
     static func load(from: String, to:URL, params: JSON) {
         
         let semaphore = DispatchSemaphore.init(value: 0)
