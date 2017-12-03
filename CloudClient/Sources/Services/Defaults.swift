@@ -11,3 +11,4 @@ import Foundation
 let apiURL = "https://cloud.mail.ru/api/v2"
 let authURL = "https://auth.mail.ru"
 let getFileURL = "https://cloclo14.datacloudmail.ru/get"
+let uploadFileURL = "https://cloclo37-upload.cloud.mail.ru/upload/"

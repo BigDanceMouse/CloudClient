@@ -40,10 +40,14 @@ public func getSubfolders(from folder: Folder) -> HomeFolder? {
     return FolderService.getFolder(home: folder).value
 }
 
-public func getFile(_ file:File) -> URL? {
-    return FileService.get(file: file).value
+public func getFile(_ file:File, progress: @escaping (Progress) -> Void) -> URL? {
+    return FileService.get(file: file, progress: progress).value
 }
 
 public func addFolder(to parentFolder: Folder, name: String) -> Bool {
     return FolderService.addFolder(to: parentFolder, name: name)
+}
+
+public func upload(_ upload: Upload, completionHandler:@escaping (Bool) -> Void) {
+    FileService.upload(upload, completionHandler:completionHandler)
 }

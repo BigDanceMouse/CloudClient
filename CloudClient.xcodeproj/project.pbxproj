@@ -14,6 +14,7 @@
 		273A72A01E708C7100024FEF /* CloudClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 273A72921E708C7100024FEF /* CloudClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		273A72AB1E70971D00024FEF /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 273A72AA1E70971D00024FEF /* Alamofire.framework */; };
 		273A72AD1E70975900024FEF /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 273A72AC1E70975900024FEF /* Alamofire.framework */; };
+		2740E1131E7EB853001F4CA6 /* Upload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2740E1121E7EB853001F4CA6 /* Upload.swift */; };
 		275951ED1E756A9D0003A246 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275951E91E756A9D0003A246 /* AuthService.swift */; };
 		275951EF1E756A9D0003A246 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275951EB1E756A9D0003A246 /* Defaults.swift */; };
 		275951F01E756A9D0003A246 /* FolderService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275951EC1E756A9D0003A246 /* FolderService.swift */; };
@@ -45,6 +46,7 @@
 		273A729F1E708C7100024FEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		273A72AA1E70971D00024FEF /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Checkouts/Alamofire/build/Debug/Alamofire.framework; sourceTree = "<group>"; };
 		273A72AC1E70975900024FEF /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Checkouts/Alamofire/build/Debug/Alamofire.framework; sourceTree = "<group>"; };
+		2740E1121E7EB853001F4CA6 /* Upload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Upload.swift; sourceTree = "<group>"; };
 		275951E91E756A9D0003A246 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthService.swift; path = Services/AuthService.swift; sourceTree = "<group>"; };
 		275951EB1E756A9D0003A246 /* Defaults.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Defaults.swift; path = Services/Defaults.swift; sourceTree = "<group>"; };
 		275951EC1E756A9D0003A246 /* FolderService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FolderService.swift; path = Services/FolderService.swift; sourceTree = "<group>"; };
@@ -139,6 +141,7 @@
 				275951F31E756AD10003A246 /* Either.swift */,
 				275951F11E756AC50003A246 /* Error.swift */,
 				27CAC25A1E741CCC006F5719 /* Node.swift */,
+				2740E1121E7EB853001F4CA6 /* Upload.swift */,
 			);
 			path = Entitys;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 				275951F61E756E7B0003A246 /* FileService.swift in Sources */,
 				275951F41E756AD10003A246 /* Either.swift in Sources */,
 				275951ED1E756A9D0003A246 /* AuthService.swift in Sources */,
+				2740E1131E7EB853001F4CA6 /* Upload.swift in Sources */,
 				275951EF1E756A9D0003A246 /* Defaults.swift in Sources */,
 				27228FDA1E7727D0008DCA2A /* CloudClient.swift in Sources */,
 				275951F21E756AC50003A246 /* Error.swift in Sources */,
