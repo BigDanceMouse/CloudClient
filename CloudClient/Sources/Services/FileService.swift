@@ -8,8 +8,6 @@
 
 import Foundation
 
-private let kUserAgentStub = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/604.3.5 (KHTML, like Gecko) Version/11.0.1 Safari/604.3.5"
-
 
 struct FileService {
 
@@ -32,23 +30,7 @@ struct FileService {
     
     static func upload(_ upload: Upload, completionHandler:@escaping (Bool) -> Void) {
         
-        let url = uploadFileURL
-        
-        let home = upload.home + upload.name
-        
-        let params: [String: String] = [
-            "token": AuthService.token!,
-            "X-Requested-With": "XMLHttpRequest",
-            "Content-Type" : "image/jpeg",
-            "Connection": "keep-alive",
-            "Content-Length" : String(upload.size),
-            "User-Agent": kUserAgentStub,
-            "Origin" : "https://cloud.mail.ru",
-            "Referer": "https://cloud.mail.ru" + upload.home,
-            "home" : home
-        ]
-        
-        CloudService.upload(upload, to: url, headers: params, completionHandler:completionHandler)
+        CloudService.upload(upload, to: uploadFileURL, completionHandler:completionHandler)
     }
     
 }
