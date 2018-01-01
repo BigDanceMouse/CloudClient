@@ -16,7 +16,8 @@ struct FileService {
         guard
             let fileURL = getURL(for: file)
             else { return .fail(CCError.fileManagerError) }
-        let preparedURL = file.home.replacingOccurrences(of: " ", with: "%20")
+        let preparedURL = file.home.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+            ?? file.home
         CloudService.download(from: preparedURL, to: fileURL, params: [:], progress: progress )
         return .success(fileURL)
     }

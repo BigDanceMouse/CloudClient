@@ -86,7 +86,6 @@ struct CloudService {
     static func download(from: String, to:URL, params: JSON, progress: @escaping (Progress) -> Void) {
         
         let semaphore = DispatchSemaphore.init(value: 0)
-        
         let destination: DownloadRequest.DownloadFileDestination = { tempURL, _ in
             (to, DownloadRequest.DownloadOptions.removePreviousFile)
         }
