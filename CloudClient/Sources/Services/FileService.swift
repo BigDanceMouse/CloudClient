@@ -12,7 +12,7 @@ import Foundation
 struct FileService {
 
     
-    static func get(file: File, progress: @escaping (Progress) -> Void) -> Either<URL> {
+    static func get(file: File, progress: @escaping ProgressLoader) -> Either<URL> {
         guard
             let fileURL = getURL(for: file)
             else { return .fail(CCError.fileManagerError) }
@@ -29,9 +29,11 @@ struct FileService {
     }
     
     
-    static func upload(_ upload: Upload, completionHandler:@escaping (Bool) -> Void) {
-        
-        CloudService.upload(upload, to: uploadFileURL, completionHandler:completionHandler)
+    static func upload(_ upload: Upload, progressLoader:@escaping ProgressLoader, completionHandler: @escaping (Bool)->Void) {
+        CloudService.upload(
+            upload, to: uploadFileURL,
+            progressLoader: progressLoader,
+            completionHandler: completionHandler)
     }
     
 }

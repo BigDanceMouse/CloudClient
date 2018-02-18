@@ -8,6 +8,12 @@
 
 import Foundation
 
+
+public typealias ProgressLoader = (Progress)->Void
+public typealias LoadComplitionHandler = (Bool)->Void
+
+
+
 public func prepare() {
     _ = AuthService.restoreToken()
 }
@@ -48,6 +54,9 @@ public func addFolder(to parentFolder: Folder, name: String) -> Bool {
     return FolderService.addFolder(to: parentFolder, name: name)
 }
 
-public func upload(_ upload: Upload, completionHandler:@escaping (Bool) -> Void) {
-    FileService.upload(upload, completionHandler:completionHandler)
+public func upload(_ upload: Upload, progressLoader: @escaping ProgressLoader, completionHandler: @escaping LoadComplitionHandler) {
+    
+    FileService.upload(upload,
+                       progressLoader: progressLoader,
+                       completionHandler: completionHandler)
 }

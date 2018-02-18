@@ -23,17 +23,18 @@ fileprivate let MAX_UPLOADING_FILES = 2
 
 struct CloudService {
     
-    private static let uploadSemaphore = DispatchSemaphore.init(value: MAX_UPLOADING_FILES)
+    private static let uploadSemaphore
+        = DispatchSemaphore.init(value: MAX_UPLOADING_FILES)
     
     
     static func getAuth(method: String, params: JSON = [:]) -> Either<JSON> {
         return get(url: authURL + method, params: params)
-    }
+        }
     
     
     static func get(method: String, params: JSON = [:]) -> Either<JSON> {
         return get(url: apiURL + method, params: params)
-    }
+        }
     
     
     private static func get(url: String, params: JSON) -> Either<JSON> {
@@ -45,14 +46,14 @@ struct CloudService {
             .request(url, method: .get, parameters: params)
             .responseJSON(queue: queue) { r in
                 
-                if let json = r.value as? JSON {
+                defer { semaphore.signal() }
+                
+                switch r.value {
+                case let json as JSON:
                     result = .success(json)
-                }
-                else {
+                default:
                     result = .fail(CCError.failParce)
                 }
-                
-                semaphore.signal()
         }
         
         _ = semaphore.wait(timeout: .distantFuture)
@@ -108,7 +109,7 @@ struct CloudService {
     /// Загружает указанный файл в облако. Загрузка будет проходить в 2 этапа -
     /// 1 первым будет отправлен сам файл в общее облачное хранилище и в случае успеха будет возвращен хэш этого файла
     /// 2 при наличии хэша будет выполнен запрос на добавление файла в указанную дирректорию по этому хэшу
-    static func upload(_ upload:Upload, to destination:String, completionHandler:@escaping (Bool) -> Void) {
+    static func upload(_ upload:Upload, to destination:String, progressLoader: @escaping ProgressLoader, completionHandler:@escaping LoadComplitionHandler) {
         
         
         let headers: [String: String] = [
@@ -128,18 +129,33 @@ struct CloudService {
         let requestURL = "\(destination)?cloud_domain=2&x-email=flie@inbox.ru"
         
         Alamofire
-            .request(requestURL, method: .put, parameters: nil, encoding: upload.data, headers: headers)
+            .upload(upload.data, to: requestURL, method: .put, headers: headers)
+            .uploadProgress(closure: progressLoader)
             .responseString { (response) in
                 if case .success(let hash) = response.result {
                     print(hash)
-                    addUploadedFile(upload, hash: hash, completionHandler: completionHandler)
+                    self.addUploadedFile(upload, hash: hash, completionHandler: completionHandler)
                 } else {
                     print(response)
                     completionHandler(false)
                 }
-
+                
                 uploadSemaphore.signal()
             }
+            
+            
+            
+            
+            
+//
+//
+//
+//
+//
+//
+//            .request(requestURL, method: .put, parameters: nil, encoding: upload.data, headers: headers)
+//            .uploadProgress(progressLoader)
+
 
     }
     
@@ -147,7 +163,7 @@ struct CloudService {
     /// При наличии хэша, который отождествляется с загруженным файлом в общий
     /// каталог , будет выполнено добавления файла, чей хэш передан в
     /// дирректорию которая указана в Upload параметре
-    private static func addUploadedFile(_ upload:Upload, hash:String, completionHandler:@escaping (Bool) -> Void) {
+    private static func addUploadedFile(_ upload:Upload, hash:String, completionHandler:@escaping LoadComplitionHandler) {
         
         let body:[String : Any] = [
             "api": "2",

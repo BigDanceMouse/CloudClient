@@ -18,7 +18,7 @@ struct FolderService {
         let params = [ "token": AuthService.token!,
                        "home" : homeFolder ]
         
-        return getFolder(with: params)
+        return self.getFolder(with: params)
     }
     
     
@@ -27,7 +27,7 @@ struct FolderService {
         let params = ["token": AuthService.token!,
                       "home" : home.home ]
 
-        return getFolder(with: params)
+        return self.getFolder(with: params)
     }
     
     
